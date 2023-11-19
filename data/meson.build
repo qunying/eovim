@@ -1,0 +1,5 @@
+subdir('desktop')
+subdir('images')
+subdir('man')
+subdir('themes')
+subdir('vim')

@@ -26,16 +26,15 @@ jobs:
       run: |
         sudo apt-get install --yes libefl-all-dev
         sudo apt-get install --yes libmsgpack-dev
-        sudo apt-get install --yes cmake
+        sudo apt-get install --yes meson
+        sudo apt-get install --yes ninja
         sudo apt-get install --yes build-essential
 
     - name: compile
       run: |
         mkdir -p build/_install
-        cd build
-        cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=_install ..
-        cmake --build .
-        cmake --build . --target install
+        cwd=`pwd`; meson setup --prefix=$pwd/build/_install build
+        ninja -C build install
 
     - name: Lint Additional Neovim Runtime
       uses: reviewdog/action-vint@v1

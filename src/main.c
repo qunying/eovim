@@ -3,7 +3,7 @@
 #include <eovim/keymap.h>
 #include <eovim/nvim.h>
 #include <eovim/nvim_api.h>
-#include <eovim/version.h>
+#include <version.h>
 #include <eovim/nvim_request.h>
 #include <eovim/nvim_event.h>
 #include <eovim/termview.h>
